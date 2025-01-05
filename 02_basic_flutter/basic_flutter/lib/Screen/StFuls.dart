@@ -49,7 +49,7 @@ class _StFulsState extends State<StFuls> {
                   ],
                 ),
               ),
-              Text(
+              const Text(
                 "Hello World",
                 style: TextStyle(
                   fontSize: 30,

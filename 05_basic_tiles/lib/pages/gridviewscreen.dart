@@ -16,7 +16,7 @@ class _GridViewScreenState extends State<GridViewScreen> {
           //it send one step back
           Navigator.pushNamed(context, "/listbuilders");
         },
-        child: Icon(Icons.next_plan),
+        child: const Icon(Icons.next_plan),
       ),
       body: GridView.count(
         crossAxisCount: 3,

@@ -15,11 +15,11 @@ class _SecondScreenState extends State<SecondScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("second screen"),
+        title: const Text("second screen"),
         backgroundColor: Colors.red,
         actions: [
           IconButton(
-            icon: Icon(Icons.abc),
+            icon: const Icon(Icons.abc),
             onPressed: () {
               Navigator.pop(
                 context,

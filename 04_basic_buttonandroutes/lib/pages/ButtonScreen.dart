@@ -1,4 +1,3 @@
-import 'package:basic_button/pages/SecondScreen.dart';
 import 'package:flutter/material.dart';
 
 class ButtonScreen extends StatefulWidget {

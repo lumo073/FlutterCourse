@@ -18,6 +18,7 @@ class _SplashScreenState extends State<SplashScreen> {
     });
   }
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
@@ -26,7 +27,7 @@ class _SplashScreenState extends State<SplashScreen> {
             Container(
               height: 400,
               width: double.infinity,
-              margin: EdgeInsets.all(30),
+              margin: const EdgeInsets.all(30),
               decoration: BoxDecoration(
                 border: Border.all(
                   width: 4,

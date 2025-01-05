@@ -25,7 +25,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
               top: 10,
               right: 0,
               child: Container(
-                  child: Icon(
+                  child: const Icon(
                 Icons.star,
                 size: 50,
                 color: Colors.red,
