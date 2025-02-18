@@ -7,36 +7,27 @@ final authProvider = StateNotifierProvider<AuthNotifier, User?>((ref) {
 });
 
 class AuthNotifier extends StateNotifier<User?> {
-  AuthNotifier() : super(null){
-    _loadUser();
+  AuthNotifier() : super(null) {
+    LoadUser();
   }
 
   Future<String> login(String email, String password) async {
     final pref = await SharedPreferences.getInstance();
-    final String storedEmail = pref.getString('email');
-    final String storedPassword = pref.getString('password');
-    final String storeusername = pref.getString('username');
-    final  String storephoneNumber = pref.getString('phone_number');
+    final String? storedEmail = pref.getString('email');
+    final String? storedPassword = pref.getString('password');
+    final String? storeusername = pref.getString('username');
+    final String? storephoneNumber = pref.getString('phone_number');
 
-    if(storedEmail == email && storedPassword == password){
+    if (storedEmail == email && storedPassword == password) {
       state = User(
-        email: storedEmail,
-        password: storedPassword,
-        username: storeusername,
-        phoneNumber: storephoneNumber
-      );
+          email: storedEmail!,
+          password: storedPassword!,
+          username: storeusername!,
+          phoneNumber: storephoneNumber!);
       return 'Login Success';
-    }else{
+    } else {
       return 'Login Failed';
     }
-  }
-
-  Future<String> login(User user) async {
-    // Simulate a network request
-    await Future.delayed(Duration(seconds: 1));
-    state = user;
-    final prefs = await SharedPreferences.getInstance();
-    prefs.setString('user', user.toJson().toString());
   }
 
   Future<void> logout() async {
@@ -49,7 +40,9 @@ class AuthNotifier extends StateNotifier<User?> {
     final prefs = await SharedPreferences.getInstance();
     final userString = prefs.getString('user');
     if (userString != null) {
-      state = User.fromJson(userString);
+      state = User.fromJson(userString as Map<String, dynamic>);
     }
   }
 }
+
+class LoadUser {}
